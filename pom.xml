@@ -19,19 +19,13 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <parent>
-    <groupId>com.google.cloud.samples</groupId>
-    <artifactId>shared-configuration</artifactId>
-    <version>1.2.0</version>
-  </parent>
-
   <groupId>com.dataflow.demo</groupId>
   <artifactId>df-template</artifactId>
   <version>1.0</version>
 
   <properties>
-    <maven.compiler.source>11</maven.compiler.source>
-    <maven.compiler.target>11</maven.compiler.target>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <truth.version>1.0.1</truth.version>
     <beam.version>2.51.0</beam.version>
@@ -144,6 +138,14 @@
       <scope>runtime</scope>
     </dependency>
 
+    <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-databind</artifactId>
+    <version>2.15.3</version>
+</dependency>
+
+
     <!-- Apache Beam
       To run on another of the Beam runners, add its module to this pom.xml
       according to the runner-specific setup instructions on the Beam website:
@@ -188,25 +190,25 @@
     <dependency>
       <groupId>org.apache.beam</groupId>
       <artifactId>beam-sdks-java-core</artifactId>
-      <version>2.11.0</version>
+      <version>${beam.version}</version>
     </dependency>
 
 <dependency>
   <groupId>org.apache.beam</groupId>
   <artifactId>beam-sdks-java-io-jdbc</artifactId>
-  <version>2.11.0</version>
+  <version>${beam.version}</version>
 </dependency>
 
 <dependency>
 <groupId>org.apache.beam</groupId>
 <artifactId>beam-sdks-java-io-google-cloud-platform</artifactId>
-<version>2.11.0</version>
+<version>${beam.version}</version>
 </dependency>
 
 <dependency>
 <groupId>org.apache.beam</groupId>
 <artifactId>beam-runners-direct-java</artifactId>
-<version>2.11.0</version>
+<version>${beam.version}</version>
 <scope>runtime</scope>
 </dependency>
 
